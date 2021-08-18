@@ -1,5 +1,3 @@
-package com.ssafy.solution;
-
 import java.util.Scanner;
 import java.util.Stack;
 
@@ -9,8 +7,8 @@ public class Solution {
 		Scanner sc = new Scanner(System.in);
 		
 		for (int tc = 1; tc <= 10; tc++) {
-			int len = sc.nextInt();								// 문자열의 길이
-			char[] ch = sc.next().toCharArray();				// 문자 배열
+			int len = sc.nextInt();					// 문자열의 길이
+			char[] ch = sc.next().toCharArray();			// 문자 배열
 			Stack<Character> stack = new Stack<Character>();	// 스택 초기화
 			
 			// ch 배열을 순회하며 stack의 마지막 괄호와 현재 ch[i]의 괄호가 유효한지 판단
@@ -27,3 +25,12 @@ public class Solution {
 		sc.close();
 	}
 }
+
+/* 테스트 케이스가 1개일 때
+입력
+182
+(({<(({{[[[[<<[[(<[[{([{{{[<[[[{<<(<[[{}[]{}{}[]]]><><>{})[]{}><>[]<>><>}][]]<>{}]>]()}()()(){}}}{}][])(){}<>()}]{}[]]>()[][][]){}]]{}[]<>><>{}[]{}<>>]]]][]{}{}[]()}}))>}<>{}()))[][]
+
+출력
+#1 1
+*/
