@@ -43,18 +43,20 @@ public class BOJ_7576_토마토 {
 			}
 		}
 		
-
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < M; j++) {
-				if (map[i][j] == 1) {
-					queue.offer(new int[] {i, j});
+		// 안익은 토마토가 없다면
+		if (zero == 0) System.out.println(day);
+		// 안익은 토마토가 있다면
+		else {
+			for (int i = 0; i < N; i++) {
+				for (int j = 0; j < M; j++) {
+					if (map[i][j] == 1) {
+						queue.offer(new int[] {i, j});
+					}
 				}
 			}
+			bfs();
+			System.out.println(day);
 		}
-		bfs();
-		
-		// 출력
-		System.out.println(day);
 	}
 	
 	// bfs
@@ -79,6 +81,7 @@ public class BOJ_7576_토마토 {
 				}
 			}
 		}
+		// day를 2부터 시작했으니 -1
 		day = zero == 0 ? day-1 : -1;
 	}
 }
